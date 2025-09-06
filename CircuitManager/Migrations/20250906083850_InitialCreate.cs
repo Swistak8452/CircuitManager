@@ -5,7 +5,7 @@
 namespace CircuitManager.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -75,9 +75,27 @@ namespace CircuitManager.Migrations
                 column: "ComponentListId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CircuitElements_Name",
+                table: "CircuitElements",
+                column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CircuitElements_NextCircuitElementId",
                 table: "CircuitElements",
                 column: "NextCircuitElementId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Components_Name",
+                table: "Components",
+                column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Components_Shortcut",
+                table: "Components",
+                column: "Shortcut",
+                unique: true);
         }
 
         /// <inheritdoc />

@@ -155,3 +155,4 @@ C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-win
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\ExportCircuitDialog.g.cs
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\JsonViewerDialog.baml
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\JsonViewerDialog.g.cs
+C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\CircuitManager.sourcelink.json

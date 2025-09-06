@@ -76,6 +76,9 @@ namespace CircuitManager.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
+                    b.HasIndex("Shortcut")
+                        .IsUnique();
+
                     b.ToTable("Components");
                 });
 

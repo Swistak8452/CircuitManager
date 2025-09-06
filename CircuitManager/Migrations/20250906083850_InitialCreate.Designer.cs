@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CircuitManager.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250906064706_AddUniqueIndexes")]
-    partial class AddUniqueIndexes
+    [Migration("20250906083850_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -77,6 +77,9 @@ namespace CircuitManager.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.HasIndex("Shortcut")
                         .IsUnique();
 
                     b.ToTable("Components");

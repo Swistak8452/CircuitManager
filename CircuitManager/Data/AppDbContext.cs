@@ -33,6 +33,11 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Component>()
             .HasIndex(c => c.Name)
             .IsUnique();
+        
+        // Unikalność dla CircuitElement.Shortcut
+        modelBuilder.Entity<Component>()
+            .HasIndex(c => c.Shortcut)
+            .IsUnique();
 
         // Unikalność dla CircuitElement.Name
         modelBuilder.Entity<CircuitElement>()
