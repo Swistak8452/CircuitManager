@@ -2,16 +2,16 @@
 
 public class Component
 {
-    public int Id { get; set; }            // techniczne ID (dla EF i relacji)
+    public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
-    public string Shortcut { get; set; } = string.Empty;
-    
-    public override string ToString()
-    {
-        return $"{Shortcut} ({Name})";
-    }
-    
-    // na potrzeby wielu-do-wielu z CircuitElement:
+    public string Label { get; set; } = string.Empty;
+    public IODirection Direction { get; set; } = IODirection.Input;
+    public override string ToString() => $"{Label} ({Name})";
     public ICollection<CircuitElement> CircuitElements { get; set; } = new List<CircuitElement>();
-    
+}
+
+public enum IODirection
+{
+    Input = 0,
+    Output = 1
 }

@@ -140,10 +140,8 @@ C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-win
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\CircuitManager.pdb
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\CircuitManager.genruntimeconfig.cache
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\ref\CircuitManager.dll
-C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\AddComponentWindow.baml
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\CircuitElementsView.baml
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\HomeView.baml
-C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\AddComponentWindow.g.cs
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\CircuitElementsView.g.cs
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\ComponentsView.g.cs
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\HomeView.g.cs
@@ -156,3 +154,9 @@ C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-win
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\JsonViewerDialog.baml
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\JsonViewerDialog.g.cs
 C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\CircuitManager.sourcelink.json
+C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\EditMachineTypeWindow.baml
+C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\MachineTypesView.baml
+C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\EditMachineTypeWindow.g.cs
+C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\MachineTypesView.g.cs
+C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\EditComponentWindow.baml
+C:\Users\Marcin\RiderProjects\CircuitManager\CircuitManager\obj\Debug\net9.0-windows\Views\EditComponentWindow.g.cs

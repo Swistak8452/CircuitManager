@@ -1,16 +1,44 @@
 ﻿<UserControl x:Class="CircuitManager.Views.ComponentsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:CircuitManager.Views"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d">
     <DockPanel>
-        <Button Content="Add component" DockPanel.Dock="Top" Margin="10" Width="150" HorizontalAlignment="Left" Click="AddComponent_Click"/>
-        <DataGrid x:Name="ComponentsGrid" AutoGenerateColumns="False" Margin="10">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="10">
+            <Button Content="Add component"
+                    Width="150"
+                    Click="AddComponent_Click"/>
+        </StackPanel>
+
+        <DataGrid x:Name="ComponentsGrid"
+                  Margin="10"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  SelectionMode="Single">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Shortcut" Binding="{Binding Shortcut}" Width="*"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="60"/>
+                <DataGridTextColumn Header="Label" Binding="{Binding Label}" Width="*" />
+                <DataGridTextColumn Header="Name"  Binding="{Binding Name}"  Width="*" />
+                <DataGridTextColumn Header="Direction" Binding="{Binding Direction}" Width="120" />
+
+                <DataGridTemplateColumn Header="Edit" Width="90">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" Tag="{Binding}" Click="Edit_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Delete" Width="90">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Tag="{Binding}" Click="Delete_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </DockPanel>
