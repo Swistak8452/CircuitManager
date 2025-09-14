@@ -2,6 +2,7 @@
 
 namespace CircuitManager.Models;
 
+// Maszyna - element układu
 public class CircuitElement
 {
     [Key]

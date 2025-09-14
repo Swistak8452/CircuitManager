@@ -10,7 +10,6 @@ public partial class HomeView : UserControl
         InitializeComponent();
     }
 
-
     private void GenerateJson_Click(object sender, RoutedEventArgs e)
     {
         var dialog = new ExportCircuitDialog();

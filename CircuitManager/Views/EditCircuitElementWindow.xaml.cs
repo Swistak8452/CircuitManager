@@ -14,7 +14,7 @@ public partial class EditCircuitElementWindow : Window
     private readonly AppDbContext _db = new();
     private CircuitElement _element = new();
 
-    // ⬇️ Flagi do logiki autopodpowiedzi
+    // Flagi do logiki autopodpowiedzi
     private bool _nameManuallyEdited = false;
     private bool _isProgrammaticNameUpdate = false;
     private string? _lastAutoName = null;
@@ -53,7 +53,7 @@ public partial class EditCircuitElementWindow : Window
         var filtered = _elementId == null ? allElements : allElements.Where(e => e.Id != _elementId).ToList();
         NextElementCombo.ItemsSource = new[] { "None" }.Concat(filtered.Select(e => e.Name));
 
-        // 5) Wartości w UI (edycja)
+        // 5) Edycja w UI
         if (_elementId != null)
         {
             NameBox.Text = _element.Name;
@@ -63,7 +63,7 @@ public partial class EditCircuitElementWindow : Window
             foreach (var comp in _element.ComponentList)
                 ComponentsList.SelectedItems.Add(comp);
 
-            // Przy edycji nie autouzupelniamy — user już ma nazwę
+            // Przy edycji nie autouzupelniamy — user już ma nazwę wprowadzoną ręcznie
             _nameManuallyEdited = true;
         }
         else
@@ -73,14 +73,14 @@ public partial class EditCircuitElementWindow : Window
         }
     }
 
-    // ⬇️ Użytkownik zaczął pisać nazwę – nie nadpisujmy jej automatycznie
+    // Użytkownik zaczął pisać nazwę – nie nadpisujmy jej automatycznie
     private void NameBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
     {
         if (_isProgrammaticNameUpdate) return;
         _nameManuallyEdited = true;
     }
 
-    // ⬇️ Po zmianie MachineType — jeśli user nie wpisał sam, zaproponuj Label+liczba (TP1, TP2, ...)
+    // Po zmianie MachineType — jeśli user nie wpisał sam, zaproponuj Label+liczba (TP1, TP2, ...)
     private void MachineTypeCombo_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
     {
         if (_elementId != null) return; // tylko podczas dodawania nowego
@@ -104,7 +104,7 @@ public partial class EditCircuitElementWindow : Window
         }
     }
 
-    // ⬇️ Logika wyznaczania kolejnego numeru
+    // Logika wyznaczania kolejnego numeru
     private string GenerateNextName(string label)
     {
         // Pobierz istniejące nazwy zaczynające się od label (np. "TP")

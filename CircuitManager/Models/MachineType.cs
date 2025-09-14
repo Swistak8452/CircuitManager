@@ -1,5 +1,6 @@
 ﻿namespace CircuitManager.Models;
 
+// Rodzaj maszyny
 public class MachineType
 {
     public int Id { get; set; }

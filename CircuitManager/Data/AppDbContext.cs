@@ -28,6 +28,7 @@ public class AppDbContext : DbContext
         options.UseSqlite($"Data Source={DbPath}");
     }
 
+    // Polecenia do inicjalizacji bazy danych.
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         

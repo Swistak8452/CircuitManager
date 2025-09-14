@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CircuitManager"
         xmlns:views="clr-namespace:CircuitManager.Views"
         mc:Ignorable="d"
-        Title="Circut Manager" Height="450" Width="800">
+        Title="Circuit Manager" Height="450" Width="800">
     <Grid>
         <TabControl>
             <TabItem Header="🏠 Home">

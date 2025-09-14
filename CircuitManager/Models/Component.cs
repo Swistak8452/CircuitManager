@@ -1,5 +1,6 @@
 ﻿namespace CircuitManager.Models;
 
+// Element interfejsu
 public class Component
 {
     public int Id { get; set; }
@@ -10,6 +11,7 @@ public class Component
     public ICollection<CircuitElement> CircuitElements { get; set; } = new List<CircuitElement>();
 }
 
+// Typ interfejsu
 public enum IODirection
 {
     Input = 0,

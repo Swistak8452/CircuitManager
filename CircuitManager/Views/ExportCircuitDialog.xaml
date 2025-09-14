@@ -10,14 +10,10 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-
-        <!-- lista u góry -->
         <ListBox x:Name="CircuitList"
                  Grid.Row="0"
                  SelectionMode="Extended"
                  DisplayMemberPath="Name" />
-
-        <!-- przyciski na dole: 2 kolumny, przyciski rozciągają się równo -->
         <Grid Grid.Row="1" Margin="0,10,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
