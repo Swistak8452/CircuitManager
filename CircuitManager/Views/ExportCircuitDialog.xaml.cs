@@ -14,19 +14,21 @@ public partial class ExportCircuitDialog : Window
 {
         private readonly AppDbContext _db = new();
 
+    // Przygotowanie danych potrzebnych do wyświetlenia okienka dot. exportu
     public ExportCircuitDialog()
     {
         InitializeComponent();
 
-        // dociągamy relacje, bo będą potrzebne do tagów i rekurencji
+        // Dociągamy relacje, bo będą potrzebne do tagów i rekurencji
         CircuitList.ItemsSource = _db.CircuitElements
             .Include(e => e.MachineType)
             .Include(e => e.ComponentList)
             .Include(e => e.NextCircuitElement)
             .ToList();
+        
     }
 
-    // ======= Export 1: pełny JSON wybranych elementów (z tagami przy komponentach) =======
+    // Pełny JSON wybranych elementów (z tagami przy komponentach)
     private void Export_Selected_Click(object sender, RoutedEventArgs e)
     {
         var selected = CircuitList.SelectedItems.Cast<CircuitElement>().ToList();
@@ -40,7 +42,7 @@ public partial class ExportCircuitDialog : Window
         Close();
     }
 
-    // ======= Export 2: płaskie listy inputs/outputs z wybranych elementów =======
+    // Listy inputs/outputs z wybranych elementów
     private void Export_IO_Click(object sender, RoutedEventArgs e)
     {
         var selected = CircuitList.SelectedItems.Cast<CircuitElement>().ToList();
@@ -65,7 +67,7 @@ public partial class ExportCircuitDialog : Window
     private CircuitElementExportDto? MapElementWithTags(CircuitElement element, HashSet<int>? visited = null)
     {
         visited ??= new HashSet<int>();
-        if (!visited.Add(element.Id)) return null; // antycykliczne
+        if (!visited.Add(element.Id)) return null;
 
         var comps = BuildComponentsWithTags(element);
 
@@ -84,7 +86,7 @@ public partial class ExportCircuitDialog : Window
         };
     }
 
-    // ======= Wyliczanie tagów dla komponentów danego elementu =======
+    // Wyliczanie tagów dla komponentów danego elementu
     private IEnumerable<ComponentExportDto> BuildComponentsWithTags(CircuitElement element)
     {
         // Numeracja osobno dla każdego labela (prefiksu), np. B1..Bn, Q1..Qn
@@ -111,7 +113,7 @@ public partial class ExportCircuitDialog : Window
         }
     }
 
-    // ======= Budowanie listy tagów Input/Output (rekurencyjnie przez łańcuch Next) =======
+    // Budowanie tagów Input/Output (rekurencyjnie przez Next)
     private void BuildTagsForElement(CircuitElement element, out List<string> inputs, out List<string> outputs)
     {
         inputs = new List<string>();
